@@ -28,33 +28,17 @@ function parseDecimal(number) {
     return parseFloat(number.toFixed(2));
 }
 
-const ResultTable = () => {
+const ResultTable = ({data}) => {
     const [page, setPage] = useState(0); // Current page index
     const rowsPerPage = 8;
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
-
-    const [data, setData] = useState([]);
-    const userId = useSelector((state) => state.id);
     const token = useSelector((state) => state.token);
 
-    const addToTable = (newRow) => {
-        setData((prevData) => [newRow, ...prevData]);
-    };
-    useEffect(() => {
-        const url = 'http://localhost:8080/points/getMyPoints';
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch((error) => console.log(error));
-    }, []);
+
+    
 
     const paginatedData = data.slice(
         page * rowsPerPage,
@@ -63,7 +47,6 @@ const ResultTable = () => {
 
     return (
         <>
-            <Graph addToTable={addToTable}/>
 
             <Grid item xs={12} sm={6} md={4} className={'result-table-container'}>
                 <TableContainer component={Paper} style={{background: 'transparent'}}>
