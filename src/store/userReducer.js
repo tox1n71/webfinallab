@@ -3,12 +3,10 @@ const defaultState = {
     token: ""
 };
 
-// Чтение состояния из localStorage при инициализации
-const persistedState = localStorage.getItem("reduxState")
-    ? JSON.parse(localStorage.getItem("reduxState"))
+const persistedState = localStorage.getItem("token")
+    ? JSON.parse(localStorage.getItem("token"))
     : {};
 
-// Объединение сохраненного состояния с исходным состоянием по умолчанию
 const initialState = { ...defaultState, ...persistedState };
 
 export const userReducer = (state = initialState, action) => {

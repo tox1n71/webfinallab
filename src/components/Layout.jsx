@@ -14,8 +14,8 @@ const Layout = () => {
     const dispatch = useDispatch();
 
     const handleLogOut = () =>{
-        dispatch({ type: 'remove_user', payload: {id: null, username: "", token: ""}})
-        localStorage.removeItem("reduxState");
+        dispatch({ type: 'remove_user', payload: {username: "", token: ""}})
+        localStorage.removeItem("token");
 
     }
     return (

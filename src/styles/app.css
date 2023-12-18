@@ -9,8 +9,6 @@ body{
     padding: 0;
 
 }
-
-
 .user-form-stack{
     height: 55vh;
     justify-content: center;
@@ -36,105 +34,295 @@ header{
     border-right-color: transparent;
     align-items: center;
 }
-.psglgd{
-    height: 48px;
-    background: linear-gradient(40deg, rgb(9, 9, 9) 0%, rgb(8, 9, 31) 100%);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 0.1px solid transparent;
-    border-bottom-color: gray;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    padding-left: 240px;
-    padding-right: 240px;
-}
-.psglgd a{
-    text-decoration: none;
-    color: white;
-}
 
-.links-margin{
-    margin-right: 20px;
-}
+/* desktop styles*/
+@media (min-width: 1113px){
 
-.logout-icon{
-    padding-left: 2px;
-    padding-top: 8px;
-}
 
-.layot-title{
-    margin-right: auto;
-}
+    .psglgd{
+        height: 48px;
+        background: linear-gradient(40deg, rgb(9, 9, 9) 0%, rgb(8, 9, 31) 100%);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 0.1px solid transparent;
+        border-bottom-color: gray;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding-left: 240px;
+        padding-right: 240px;
+    }
+    .psglgd a{
+        text-decoration: none;
+        color: white;
+    }
 
-.main-form{
-    padding-left: 90px;
-    margin-right: 100px;
-    float: left;
-    width: 200px;
-    height: 90vh;
-    align-items: center;
-    display: flex;
-    margin-top: 20px;
-}
+    .links-margin{
+        margin-right: 20px;
+    }
 
-.main-form-label{
-    text-align: center;
-}
+    .logout-icon{
+        padding-left: 2px;
+        padding-top: 8px;
+    }
 
-.graph{
-    float: left;
-    margin-top: 20px;
-    align-items: center;
-    width: fit-content;
-    color: #F0EEEB;
-    display: flex;
-    height: fit-content;
-}
+    .layot-title{
+        margin-right: auto;
+    }
 
-.round-container {
-    border: solid 1px white;
-    border-radius: 12px;
-}
+    .main-form{
+        padding-left: 90px;
+        margin-right: 100px;
+        float: left;
+        width: 200px;
+        height: 90vh;
+        align-items: center;
+        display: flex;
+        margin-top: 20px;
+    }
 
-.xyr-form{
-    width: fit-content;
-    height: fit-content;
-}
+    .main-form-label{
+        text-align: center;
+    }
 
-.error-select{
-    border-color: red !important;
-}
+    .graph{
+        float: left;
+        margin-top: 20px;
+        align-items: center;
+        width: fit-content;
+        color: #F0EEEB;
+        display: flex;
+        height: fit-content;
+    }
 
-.container {
-    display: flex;
-    align-items: center;
-}
+    .round-container {
+        border: solid 1px white;
+        border-radius: 12px;
+    }
 
-.username {
-    margin-right: 8px;
-}
+    .xyr-form{
+        width: fit-content;
+        height: fit-content;
+    }
 
-.account-icon {
-    margin-right: 8px;
-}
+    .error-select{
+        border-color: red !important;
+    }
 
-.link-margin {
-    display: flex;
-    align-items: center;
-}
+    .container {
+        display: flex;
+        align-items: center;
+    }
 
-.logout-icon {
-    margin-bottom: 7px;
-}
+    .username {
+        margin-right: 8px;
+    }
 
-.result-table {
+    .account-icon {
+        margin-right: 8px;
+    }
+
+    .link-margin {
+        display: flex;
+        align-items: center;
+    }
+
+    .logout-icon {
+        margin-bottom: 7px;
+    }
+
+    .result-table {
+    }
+    .result-table-container {
+        padding-left: 30px;
+        padding-top: 20px;
+        /*width: 500px;*/
+        display: flex;
+        height: fit-content;
+        width: 41%;
+    }
+
 }
-.result-table-container {
-    padding-left: 30px;
-    padding-top: 20px;
-    /*width: 500px;*/
-    display: flex;
-    height: fit-content;
-    width: fit-content;
+/* mobile styles (i want to die)*/
+@media (max-width: 855px) {
+
+    .psglgd{
+        height: 48px;
+        background: linear-gradient(40deg, rgb(9, 9, 9) 0%, rgb(8, 9, 31) 100%);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 0.1px solid transparent;
+        border-bottom-color: gray;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .psglgd a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .links-margin{
+        margin-right: 20px;
+    }
+    .layot-title{
+        float: left;
+        margin-right: auto;
+        margin-left: 20px;
+    }
+    .graph{
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        margin-top: 20px;
+        align-items: center;
+        color: #F0EEEB;
+        display: flex;
+        height: fit-content;
+    }
+    .main-form{
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        margin-top: 20px;
+    }
+    .round-container {
+        border: solid 1px white;
+        border-radius: 12px;
+    }
+
+    .error-select{
+        border-color: red !important;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    .username {
+        margin-right: 8px;
+    }
+
+    .account-icon {
+        margin-right: 8px;
+    }
+
+    .link-margin {
+        display: flex;
+        align-items: center;
+    }
+
+    .logout-icon {
+
+    }
+
+    .result-table {
+    }
+    .result-table-container {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding-top: 20px;
+        /*width: 500px;*/
+        display: flex;
+        height: fit-content;
+        width: 100%;
+    }
+}
+/* Tablet styles (i'm died)*/
+@media (min-width: 855px) and (max-width: 1113px){
+    .psglgd{
+        height: 48px;
+        background: linear-gradient(40deg, rgb(9, 9, 9) 0%, rgb(8, 9, 31) 100%);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 0.1px solid transparent;
+        border-bottom-color: gray;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .psglgd a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .links-margin{
+        margin-right: 20px;
+    }
+    .layot-title{
+        float: left;
+        margin-right: auto;
+        margin-left: 20px;
+    }
+    .graph{
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        margin-top: 20px;
+        align-items: center;
+        color: #F0EEEB;
+        display: flex;
+        height: fit-content;
+    }
+    .main-form{
+        margin-left: 50px;
+        margin-right: auto;
+        float: left;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        margin-top: 20px;
+    }
+    .round-container {
+        border: solid 1px white;
+        border-radius: 12px;
+    }
+
+    .error-select{
+        border-color: red !important;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    .username {
+        margin-right: 8px;
+    }
+
+    .account-icon {
+        margin-right: 8px;
+    }
+
+    .link-margin {
+        display: flex;
+        align-items: center;
+    }
+
+    .logout-icon {
+
+    }
+
+    .result-table {
+    }
+    .result-table-container {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding-top: 20px;
+        /*width: 500px;*/
+        display: flex;
+        height: fit-content;
+        width: 80%;
+    }
 }

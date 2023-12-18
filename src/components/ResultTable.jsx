@@ -37,9 +37,6 @@ const ResultTable = ({data}) => {
     };
     const token = useSelector((state) => state.token);
 
-
-    
-
     const paginatedData = data.slice(
         page * rowsPerPage,
         page * rowsPerPage + rowsPerPage

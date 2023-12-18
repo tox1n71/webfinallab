@@ -2,15 +2,16 @@ import React, {useEffect, useRef, useState} from 'react';
 import MainForm from "../components/MainForm";
 import Graph from "../components/Graph";
 import ResultTable from "../components/ResultTable";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {motion} from "framer-motion";
 
 const MainPage = () => {
     const [currentR, setCurrentR] = useState("");
     const canvasRef = useRef(null);
-
     const [data, setData] = useState([]);
     const token = useSelector((state) => state.token);
     const [rValue, setRValue] = useState('');
+    const dispatch = useDispatch();
 
 
     const xAxisLabel = 'X';
@@ -135,12 +136,10 @@ const MainPage = () => {
     };
 
     function drawPoint(canvas, context, x, y, result) {
-
         const pointSize = 4;
         let scaledPoint = {x: scaleXAxesCoordinate(x), y: scaleYAxesCoordinate(y)};
         let pointOnCanvas = axesToCanvasCoordinates(canvas, scaledPoint.x, scaledPoint.y);
         result ? context.fillStyle = "rgb(200,0,0)" : context.fillStyle = "rgb(255,255,255)";
-        console.log(result)
         context.beginPath();
         context.fillRect(pointOnCanvas.x - pointSize / 2, pointOnCanvas.y - pointSize / 2, pointSize, pointSize);
 
@@ -178,9 +177,20 @@ const MainPage = () => {
                 Authorization: `Bearer ${token}`,
             },
         })
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch((error) => console.log(error));
+            .then((response) => {
+            if (response.status === 403) {
+                window.location.href = '/';
+                dispatch({ type: 'remove_user', payload: {username: "", token: ""}})
+                localStorage.removeItem("token");
+                return;
+            }
+
+            return response.json();
+        })
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => {});
     }, []);
     const addToTable = (newRow) => {
         setData((prevData) => [newRow, ...prevData]);
@@ -190,15 +200,20 @@ const MainPage = () => {
     };
 
     return (
-        <>
-            {/*<MainForm onRChange={handleRChange}/>*/}
-            {/*<Graph  rValue={currentR}/>*/}
-            {/*<Graph/>*/}
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+                duration: 1.5
+            }}
+        >
             <MainForm
                 rValue={rValue}
                 setRValue={setRValue}
                 canvasRef={canvasRef}
                 drawShapesByR={drawShapesByR}
+                drawPoint={drawPoint}
+                addToTable={addToTable}
             />
             <Graph
                 canvasRef={canvasRef}
@@ -209,9 +224,12 @@ const MainPage = () => {
                 yAxisScale={yAxisLabel}
                 draw={draw}
                 drawPoint={drawPoint}
+                data={data}
             />
-            <ResultTable data={data}/>
-        </>
+            <ResultTable
+                data={data}
+            />
+        </motion.div>
     );
 };
 // сунуть форму в график и передать в пропсы дроубайр и дроупоинтс
