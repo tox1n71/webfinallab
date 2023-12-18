@@ -8,7 +8,7 @@ const RegisterPage = () =>{
     return(
         <div>
             <Header/>
-            <UserForm navigateTo={"/"} buttonText={"Подтвердить"} url={"http://localhost:8080/users/registration"} formName={"Регистрация"}/>
+            <UserForm navigateTo={"/"} buttonText={"Подтвердить"} url={"http://89.104.70.26:8080/users/registration"} formName={"Регистрация"}/>
         </div>
     )
 }

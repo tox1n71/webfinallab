@@ -170,7 +170,7 @@ const MainPage = () => {
         }
     };
     useEffect(() => {
-        const url = 'http://localhost:8080/points/getMyPoints';
+        const url = 'http://89.104.70.26:8080/points/getMyPoints';
         fetch(url, {
             method: 'GET',
             headers: {

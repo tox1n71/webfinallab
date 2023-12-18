@@ -46,7 +46,7 @@ const MainForm = ({drawShapesByR, drawPoint, onRChange, canvasRef, rValue, setRV
         event.preventDefault();
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
-        fetch('http://localhost:8080/points/add', {
+        fetch('http://89.104.70.26:8080/points/add', {
             method: 'POST', headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}` // Помещение JWT токена в заголовок Authorization

@@ -37,7 +37,7 @@ const Graph = ({addToTable, rValue, setRValue, xAxisScale, yAxisScale, draw, dra
                 yAxisScale = canvas.height / 10;
                 const xAxes = (xCanvas - canvas.width / 2) / xAxisScale;
                 const yAxes = -(yCanvas - canvas.height / 2) / yAxisScale;
-                const url = 'http://localhost:8080/points/add';
+                const url = 'http://89.104.70.26:8080/points/add';
                 fetch(url, {
                     method: 'POST',
                     headers: {

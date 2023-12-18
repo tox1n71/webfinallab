@@ -14,7 +14,7 @@ const LoginPage = () => {
     return (
        <>
             <Header/>
-            <UserForm navigateTo={"/main"} buttonText={"Войти"} url={"http://localhost:8080/users/login"} formName={"Авторизация"}/>
+            <UserForm navigateTo={"/main"} buttonText={"Войти"} url={"http://89.104.70.26:8080/users/login"} formName={"Авторизация"}/>
         </>
 
     );
